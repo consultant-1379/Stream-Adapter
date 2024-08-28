@@ -1,0 +1,30 @@
+#
+# StreamAdapter.ini
+#
+# Default configuration file for StreamingAdapter.
+# 
+
+[General]
+#One key value pair JVM entry required for each Tor Streaming port,The value is the section to be used.
+JVM1=StreamCTUM
+JVM2=StreamCTRS
+
+# Details for each JVM
+
+#CTUM DataType example
+[StreamCTUM]
+# TOR Streaming input details
+#inputIP is the TOR Ip for the DataType
+inputIP=10.45.207.208
+#inputPort is the port used by the TOR inputIP for the DataType
+inputPort=11102
+# DataType values = CTUM or CTRS (defaults to CTUM)
+DataType=CTUM
+
+#CTRS DataType example
+[StreamCTRS]
+# TOR Streaming input details
+inputIP=10.45.207.208
+inputPort=11101
+# DataType values = CTUM or CTRS (defaults to CTUM)
+DataType=CTRS

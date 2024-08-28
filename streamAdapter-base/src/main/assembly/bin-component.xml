@@ -1,0 +1,20 @@
+<component>
+    <dependencySets>
+        <dependencySet>
+            <outputDirectory>lib</outputDirectory>
+            <unpack>false</unpack>
+            <scope>runtime</scope>
+        </dependencySet>
+    </dependencySets>
+    <fileSets>
+        <fileSet>
+            <directory>src/main/resources</directory>
+            <outputDirectory>etc</outputDirectory>
+            <includes>
+                <include>logback.xml</include>
+                <include>StreamAdapter.ini_default</include>
+            </includes>
+            <lineEnding>unix</lineEnding>
+        </fileSet>
+    </fileSets>
+</component>

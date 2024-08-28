@@ -1,0 +1,45 @@
+# Compiled source #
+*.class
+*/bin/*
+
+# Eclipse files
+.project
+.classpath
+.settings
+
+#Intellij Files
+*.iml
+.idea
+
+# Packages
+*.jar
+
+# Maven build files
+target
+reports
+# ARQ tests
+arq-perf
+
+# PMD
+.pmd
+
+# Merge files
+*.orig
+*.versionsBackup
+
+# python
+.pydevproject
+
+*.*~
+
+# logs files
+*.log
+/logs/*
+
+# output files
+streamAdapter-base/Out/*
+*.bin.gz
+
+# personel config file
+MyStreamAdapter.ini
+

@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+	<parent>
+        <groupId>com.ericsson.streamAdapter</groupId>
+		<artifactId>StreamAdapter</artifactId>
+		<version>1.0</version>
+    </parent>
+	<artifactId>streamAdapter-base</artifactId>
+
+    <name>[${project.artifactId}] module</name>
+	
+    <dependencies>
+        <dependency>
+            <groupId>com.ericsson.oss.mediation.component</groupId>
+            <artifactId>netty-engine</artifactId>
+            <version>1.0.24</version>
+        </dependency>
+        <dependency>
+            <groupId>com.ericsson.oss.mediation.component</groupId>
+            <artifactId>netty-engine-api</artifactId>
+            <version>1.0.24</version>
+        </dependency>
+        <dependency>
+            <groupId>com.ericsson.oss.mediation.component</groupId>
+            <artifactId>netty-metrics-registry</artifactId>
+            <version>1.0.24</version>
+        </dependency>
+        <dependency>
+            <groupId>com.ericsson.oss.mediation.component</groupId>
+            <artifactId>stream-multiplex-init-server-component</artifactId>
+            <version>1.0.24</version>
+        </dependency>
+        <dependency>
+            <groupId>com.ericsson.oss.mediation.component</groupId>
+            <artifactId>stream-multiplex-protocol</artifactId>
+            <version>1.0.24</version>
+        </dependency>
+        <dependency>
+            <groupId>com.ericsson.oss.mediation.component</groupId>
+            <artifactId>stream-mulitiplex-decoder-component</artifactId>
+            <version>1.0.24</version>
+        </dependency>
+        <dependency>
+            <groupId>com.ericsson.oss.mediation.component</groupId>
+            <artifactId>debug-component</artifactId>
+            <version>1.0.24</version>
+        </dependency>
+        <dependency>
+            <groupId>com.codahale.metrics</groupId>
+            <artifactId>metrics-core</artifactId>
+            <version>3.0.1</version>
+        </dependency>
+        <dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.11</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.mockito</groupId>
+			<artifactId>mockito-all</artifactId>
+			<version>1.9.0</version>
+		</dependency>
+		<dependency>
+			<groupId>com.ericsson.eniq</groupId>
+			<artifactId>dtk</artifactId>
+			<scope>system</scope>
+			<systemPath>${root.path}/lib/devkit.jar</systemPath>
+			<version>1.6</version>
+		</dependency>
+   	</dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-assembly-plugin</artifactId>
+                <version>2.2</version>
+                <configuration>
+                    <descriptors>
+                        <descriptor>src/main/assembly/bin.xml</descriptor>
+                        <descriptor>src/main/assembly/bin-unix.xml</descriptor>
+                    </descriptors>
+                    <finalName>StreamAdaptor-${project.version}</finalName>
+                    <tarLongFileMode>gnu</tarLongFileMode>
+                </configuration>
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>single</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>
